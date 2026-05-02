@@ -3,6 +3,11 @@ const path = require('path');
 
 let mainWindow;
 
+// Icon path: in dev it's in __dirname, in production it's in resources/
+const iconPath = app.isPackaged
+  ? path.join(process.resourcesPath, 'icon.ico')
+  : path.join(__dirname, 'icon.ico');
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1280,
@@ -17,7 +22,7 @@ function createWindow() {
       symbolColor: '#ffffff',
       height: 36,
     },
-    icon: path.join(__dirname, 'icon.ico'),
+    icon: iconPath,
     backgroundColor: '#191515',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -44,7 +49,10 @@ function createWindow() {
   mainWindow.on('restore', () => mainWindow.webContents.send('window-state-changed', 'normal'));
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  app.setAppUserModelId('com.httpie.desktop');
+  createWindow();
+});
 app.on('window-all-closed', () => { if (process.platform !== 'darwin') app.quit(); });
 app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); });
 

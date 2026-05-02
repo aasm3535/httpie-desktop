@@ -47,9 +47,17 @@
     "files": [
       "main.js",
       "preload.js",
-      "loading.html",
-      "icon.ico",
-      "icon.png"
+      "loading.html"
+    ],
+    "extraResources": [
+      {
+        "from": "icon.ico",
+        "to": "icon.ico"
+      },
+      {
+        "from": "icon.png",
+        "to": "icon.png"
+      }
     ]
   }
 }
