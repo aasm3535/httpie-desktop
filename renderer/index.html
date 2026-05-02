@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src https://httpie.io;">
+  <title>HTTPie Desktop</title>
+  <link rel="stylesheet" href="titlebar.css">
+</head>
+<body>
+  <!-- Custom Titlebar -->
+  <div id="titlebar">
+    <div id="titlebar-drag">
+      <div id="titlebar-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span id="titlebar-title">HTTPie Desktop</span>
+    </div>
+    <div id="titlebar-controls">
+      <button id="btn-minimize" class="titlebar-btn" title="Minimize">
+        <svg width="10" height="1" viewBox="0 0 10 1"><rect width="10" height="1" fill="#e0e0e0"/></svg>
+      </button>
+      <button id="btn-maximize" class="titlebar-btn" title="Maximize">
+        <svg width="10" height="10" viewBox="0 0 10 10">
+          <rect width="10" height="10" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+        </svg>
+      </button>
+      <button id="btn-restore" class="titlebar-btn" title="Restore" style="display:none">
+        <svg width="10" height="10" viewBox="0 0 10 10">
+          <rect x="2" y="0" width="8" height="8" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+          <rect x="0" y="2" width="8" height="8" fill="none" stroke="#e0e0e0" stroke-width="1" clip-path="inset(2 0 0 0)"/>
+        </svg>
+      </button>
+      <button id="btn-close" class="titlebar-btn titlebar-btn-close" title="Close">
+        <svg width="10" height="10" viewBox="0 0 10 10">
+          <line x1="0" y1="0" x2="10" y2="10" stroke="#e0e0e0" stroke-width="1.2"/>
+          <line x1="10" y1="0" x2="0" y2="10" stroke="#e0e0e0" stroke-width="1.2"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- HTTPie Web App -->
+  <iframe id="httpie-frame" src="https://httpie.io/app" allow="clipboard-read; clipboard-write"></iframe>
+
+  <script src="titlebar.js"></script>
+</body>
+</html>

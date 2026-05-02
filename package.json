@@ -1,0 +1,52 @@
+{
+  "name": "httpie-desktop",
+  "version": "1.0.0",
+  "description": "HTTPie Desktop App for Windows",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "build:portable": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^41.5.0",
+    "electron-builder": "26.0.11"
+  },
+  "build": {
+    "appId": "com.httpie.desktop",
+    "productName": "HTTPie Desktop",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "uninstallDisplayName": "HTTPie Desktop"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "loading.html",
+      "icon.ico",
+      "icon.png"
+    ]
+  }
+}
