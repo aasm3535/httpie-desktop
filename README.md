@@ -1,5 +1,9 @@
 # HTTPie Desktop for Windows
 
+<p align="center">
+  <img src="public/demo/screenshot.png" alt="HTTPie Desktop Screenshot" width="700">
+</p>
+
 A native Windows desktop wrapper for [HTTPie Web App](https://httpie.io/app) — because the official Windows app leaves a lot to be desired.
 
 Built with Electron. Uses native Windows titlebar overlay for a seamless, clean look.
@@ -11,15 +15,15 @@ Built with Electron. Uses native Windows titlebar overlay for a seamless, clean 
 - **Native Windows titlebar** — transparent overlay, no clunky custom bars
 - **Persistent storage** — your sessions, cookies, and data survive restarts
 - **Loading screen** — subtle spinner on launch while HTTPie loads
-- **System tray icon** — proper HTTPie icon in the taskbar
+- **HTTPie icon** — proper icon in taskbar, alt+tab, window, everywhere
 - **Lightweight** — minimal wrapper, HTTPie does the heavy lifting
 
 ## Install
 
 Download the latest installer from [Releases](https://github.com/gotli/httpie-desktop/releases).
 
-- **`HTTPie-Desktop-Setup-x.x.x.exe`** — NSIS installer (recommended)
-- **`HTTPie-Desktop-x.x.x-portable.exe`** — portable, no install needed
+- **`HTTPie Desktop Setup x.x.x.exe`** — NSIS installer (recommended)
+- **`HTTPie Desktop x.x.x.exe`** — portable, no install needed
 
 ## Dev
 
