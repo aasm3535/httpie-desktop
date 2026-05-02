@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "HTTPie Desktop App for Windows",
   "main": "main.js",
-  "private": true,
+  "author": "aasm3535",
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "start": "electron .",
     "build": "electron-builder --win",
@@ -34,7 +36,8 @@
           ]
         }
       ],
-      "icon": "icon.ico"
+      "icon": "icon.ico",
+      "signAndEditExecutable": false
     },
     "nsis": {
       "oneClick": false,
